@@ -44,42 +44,7 @@
     </div>
 
     <script>
-        function react() {
-            if (window.innerWidth < 600) {
-                document.querySelector('.flex').style.flexDirection = 'column';
-                Split(['#one', '#two'], {
-                    elementStyle: (dimension, size, gutterSize) => ({
-                        'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-                    }),
-                    gutterStyle: (dimension, gutterSize) => ({
-                        'flex-basis': `5px`,
-                    }),
-                    direction: 'vertical'
-                })
-            }
-            else{
-                Split(['#one', '#two'], {
-                    elementStyle: (dimension, size, gutterSize) => ({
-                        'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-                    }),
-                    gutterStyle: (dimension, gutterSize) => ({
-                        'flex-basis': `5px`,
-                    }),
-                    direction: 'horizontal'
-                })
-            }
-        }
-        react();
-        window.addEventListener('resize', react);
-        var intrvl = setInterval(function () {
-            var dragger = document.querySelector('.gutter');
-            if (dragger !== null) {
-                dragger.style.position = 'relative';
-                dragger.innerHTML = `<div id="circ"></div>`;
-                document.querySelector('#circ').style.width = '100px';
-                clearInterval(intrvl);
-            }
-        }, 100)
+        function react(){window.innerWidth<600?(document.querySelector(".flex").style.flexDirection="column",Split(["#one","#two"],{elementStyle:(e,t,i)=>({"flex-basis":`calc(${t}% - ${i}px)`}),gutterStyle:(e,t)=>({"flex-basis":"5px"}),direction:"vertical"})):Split(["#one","#two"],{elementStyle:(e,t,i)=>({"flex-basis":`calc(${t}% - ${i}px)`}),gutterStyle:(e,t)=>({"flex-basis":"5px"}),direction:"horizontal"})}react(),window.addEventListener("resize",react);var intrvl=setInterval(function(){var e=document.querySelector(".gutter");null!==e&&(e.style.position="relative",e.innerHTML='<div id="circ"></div>',document.querySelector("#circ").style.width="100px",clearInterval(intrvl))},100);
     </script>
 
 </body>
