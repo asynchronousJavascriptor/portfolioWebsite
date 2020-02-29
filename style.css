@@ -248,6 +248,7 @@ html, body{
     #nav #links input{
         width: 130px;
         padding: 6px 10px;
+        color: #fff;
     }
     #nav #links input::-webkit-input-placeholder{
         color: #fff;
